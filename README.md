@@ -1,168 +1,72 @@
-# League of Legends Hwei Build Analyzer
+# Hwei Item Damage Calculator
 
-A comprehensive Google Sheets system for analyzing Hwei item builds with **real damage calculations**, magic penetration effectiveness, and strategic build comparisons.
+Calculate **real damage and DPS** of individual items vs specific MR/HP targets.
 
-## 🎯 What This Does
+## 🎯 Purpose
 
-**Beyond Simple Gold Efficiency** - This analyzer calculates:
-- ✅ **Real damage vs different enemy types** (Squishy/Tanky/Ultra Tank)
-- ✅ **Magic penetration effectiveness** (% pen → flat pen → actual damage)  
-- ✅ **Item passive damage estimation** (Luden's, Liandry's, Shadowflame, etc.)
-- ✅ **Optimal target selection** (which enemies to focus with each build)
-- ✅ **Cost efficiency analysis** (damage per gold spent)
+**Item-by-item damage analysis**:
+- ✅ **1-item damage** vs 60 MR enemy: 1,940 
+- ✅ **2-item damage** vs 60 MR enemy: 2,748 (+808)
+- ✅ **3-item damage** vs 60 MR enemy: 3,456 (+708)
+- ✅ **Item passive effects** (Liandry's burn, Shadowflame crit, etc.)
+- ✅ **Magic penetration** (% pen → flat pen → actual damage)
 
-## 🚀 Quick Start (1 Hour Setup)
+## ⚡ Quick Start
 
-### **Option 1: Follow Complete Build Guide**
-📖 **[BUILD_GUIDE.md](BUILD_GUIDE.md)** - Step-by-step instructions to build from scratch
+1. **Download**: `core_items.csv`
+2. **Follow**: `SETUP_GUIDE_SIMPLIFIED.md` (30 minutes)
+3. **Calculate**: Real damage per item vs any target
 
-### **Option 2: Use Templates**
-1. Download CSV templates from `/data/` folder
-2. Import into Google Sheets
-3. Follow setup instructions in `/templates/`
+## 🔥 Core Items (Patch 25.11)
 
-## 📊 System Architecture
+| Item | Cost | AP | Passive | vs 60 MR Enemy |
+|------|------|----|---------|----- |
+| **Shadowflame** | 3,200g | 110 | Crit vs <40% HP | 1,940 dmg |
+| **Rabadon's Deathcap** | 3,500g | 130 | +30% AP | 2,748 dmg |
+| **Void Staff** | 3,000g | 95 | 40% Magic Pen | 3,456 dmg |
+| **Liandry's Torment** | 3,000g | 60 | Max HP burn + 6% amp | 4,112 dmg |
+| **Horizon Focus** | 2,800g | 115 | Long range bonus | 4,567 dmg |
+| **Cryptbloom** | 3,000g | 75 | 30% Magic Pen + heal | 4,891 dmg |
 
-The analyzer uses **5 interconnected Google Sheets tabs**:
-
-### 1. **Dashboard** - Main comparison interface
-- Compare up to 3 builds side-by-side
-- See damage vs different target types
-- Automatic cost efficiency calculations
-
-### 2. **Build Definitions** - Define Hwei builds
-- Select 6 items per build using dropdowns
-- Automatic damage calculations
-- Magic penetration effectiveness analysis
-
-### 3. **Items Database** - Current patch item stats
-- Complete mage item database
-- Gold efficiency calculations
-- Passive damage estimates
-
-### 4. **Stat Gold Values** - Official League gold values
-- Updated for current patch
-- Based on basic item costs
-
-### 5. **Advanced Calculations** - Complex damage formulas
-- Magic penetration order of operations
-- Target-specific damage analysis
-
-## 🧮 How Magic Penetration Works
-
-### **Example: Void Staff + Spellslinger's vs 80 MR Target**
-
-1. **% Magic Pen**: 45% (Void) + 10% (Spellslinger's) = **51.5% total**
-2. **Apply % Pen**: 80 × (1-0.515) = **38.8 MR remaining**  
-3. **Apply Flat Pen**: 38.8 - 18 (Spellslinger's) = **20.8 effective MR**
-4. **Damage Multiplier**: 100/(100+20.8) = **82.8%**
-
-Your 3000 damage combo → **2,484 actual damage**
-
-## 📈 Sample Analysis Output
-
-### **Standard Burst Build**:
-- **Items**: Luden's → Shadowflame → Rabadon's → Void → Zhonya's → Spellslinger's
-- **Total Cost**: 16,100g
-- **vs Squishy (40 MR)**: 2,847 damage **(177 dmg/1000g)**
-- **vs Tanky (80 MR)**: 2,234 damage **(139 dmg/1000g)**
-- **vs Ultra Tank (120 MR)**: 1,756 damage **(109 dmg/1000g)**
-- **Optimal Targets**: Squishy ADCs and mages
-
-### **Tank Shredder Build**:
-- **Items**: Luden's → Void → Liandry's → Rabadon's → Zhonya's → Spellslinger's  
-- **Total Cost**: 16,450g
-- **vs Squishy (40 MR)**: 2,654 damage **(161 dmg/1000g)**
-- **vs Tanky (80 MR)**: 2,456 damage **(149 dmg/1000g)**
-- **vs Ultra Tank (120 MR)**: 2,189 damage **(133 dmg/1000g)**
-- **Optimal Targets**: Tanky bruisers and supports
-
-## 🔧 Current Patch Support
-
-**Patch 25.11** - Updated for latest item changes:
-- Void Staff: 45% magic penetration (increased from 40%)
-- Shadowflame: 12 flat magic penetration + crit passive
-- Zhonya's Hourglass: 65 AP (reduced from 80)
-- Spellslinger's Shoes: 18 flat + 10% magic penetration
-
-## 📁 Repository Structure
+## 🧮 Magic Penetration Formula
 
 ```
-league-hwei-build-analyzer/
-├── BUILD_GUIDE.md           # Complete setup instructions
-├── QUICK_UPGRADE_GUIDE.md   # Upgrade existing system
-├── ADVANCED_DAMAGE_SYSTEM.md # Advanced features explanation
-├── data/
-│   ├── mage_items_template.csv    # Item database template
-│   ├── sample_builds.csv          # Example Hwei builds
-│   └── stat_gold_values.csv       # Current patch gold values
-├── templates/
-│   ├── advanced_formulas.md       # All calculation formulas
-│   └── formatting.md              # Conditional formatting guide
-└── docs/
-    ├── gold_efficiency.md         # Gold efficiency methodology
-    └── patch_updates.md           # Maintenance guide
+Step 1: Apply % Magic Pen (multiplicative)
+Step 2: Apply Flat Magic Pen (subtractive)  
+Step 3: Calculate damage = Base × 100/(100 + Effective_MR)
 ```
 
-## 🎮 How to Use
+**Example**: Void Staff + Cryptbloom vs 100 MR
+1. % Pen: 100 × (1-0.4) × (1-0.3) = **42 MR remaining**
+2. Flat Pen: 42 - 0 = **42 effective MR**  
+3. Damage: 100/(100+42) = **70.4% damage dealt**
 
-### **Creating Builds**:
-1. Go to **Build Definitions** tab
-2. Enter build name and select 6 items
-3. System auto-calculates all damage values
+## 📁 Files
 
-### **Comparing Builds**:
-1. Go to **Dashboard** tab  
-2. Select builds from dropdowns
-3. Compare damage vs different target types
+```
+hwei-item-calculator/
+├── core_items.csv              # 6 essential items + stats
+├── SETUP_GUIDE_SIMPLIFIED.md   # 30-min setup guide
+└── README.md                   # This file
+```
 
-### **Reading Results**:
-- **vs Squishy**: Damage vs ADCs, mages (40 MR)
-- **vs Tanky**: Damage vs bruisers, supports (80 MR)  
-- **vs Ultra Tank**: Damage vs full tanks (120 MR)
-- **Best Target**: Which enemy type to prioritize
-- **Damage/1000g**: Cost efficiency metric
+## 🎮 Usage
 
-## 🔄 Maintenance
+**Set target**: 60 MR, 2000 HP enemy  
+**Input items**: Shadowflame → Rabadon's → Void Staff → Liandry's  
+**See progression**:
+- 1 item: 1,940 damage
+- 2 items: 2,748 damage (+808)
+- 3 items: 3,456 damage (+708)  
+- 4 items: 4,112 damage (+656)
 
-### **Patch Updates**:
-1. Check patch notes for item changes
-2. Update item stats in database
-3. Verify gold efficiency values
-4. Test sample builds
-
-### **Adding New Items**:
-1. Add item row to Items Database
-2. Include all stats and costs
-3. Estimate passive damage value
-4. Item appears in all dropdowns automatically
-
-## 🤝 Contributing
-
-Submit pull requests with:
-- Updated item data for new patches
-- New build strategies
-- Formula improvements
-- Documentation enhancements
-
-## 📜 License
-
-Open source project for the League of Legends community.
+**Result**: Know exactly which item gives biggest damage spike!
 
 ## 🔗 Links
 
-- **Repository**: [github.com/renbkna/league-hwei-build-analyzer](https://github.com/renbkna/league-hwei-build-analyzer)
-- **League Wiki**: [wiki.leagueoflegends.com](https://wiki.leagueoflegends.com)
+- **Repository**: [github.com/renbkna/hwei-item-calculator](https://github.com/renbkna/hwei-item-calculator)
 - **Author**: renbkna
 
 ---
 
-## 🚀 Get Started Now!
-
-**Ready to optimize your Hwei gameplay?**
-
-1. 📖 **Read [BUILD_GUIDE.md](BUILD_GUIDE.md)** for complete setup
-2. 🎯 **Build your analyzer** (1 hour)
-3. 📊 **Analyze your builds** and climb ranked!
-
-*Transform from guessing item efficiency to calculating real damage output!* ⚡
+**Transform from guessing to calculating real item damage!** ⚡
