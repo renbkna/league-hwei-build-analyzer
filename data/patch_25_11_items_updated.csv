@@ -1,0 +1,33 @@
+Item Name,Gold Cost,Item Category,AP,AD,HP,Mana,MR,Armor,Ability Haste,Magic Pen %,Magic Pen Flat,Move Speed %,Move Speed Flat,Omnivamp,Unique Effect,Total Raw Stat Gold Value,Passive Estimated Value,Notes
+Amplifying Tome,400,Basic,20,0,0,0,0,0,0,0,0,0,0,0,Basic AP component,400,0,Current patch verified
+Blasting Wand,850,Basic,40,0,0,0,0,0,0,0,0,0,0,0,Basic AP component,800,0,Current patch verified
+Needlessly Large Rod,1250,Basic,60,0,0,0,0,0,0,0,0,0,0,0,Basic AP component,1200,0,Current patch verified
+Sapphire Crystal,350,Basic,0,0,0,250,0,0,0,0,0,0,0,0,Basic mana component,250,0,Current patch verified
+Lost Chapter,1300,Epic,40,0,0,300,0,0,0,0,0,0,0,0,Mana restore on level,1100,200,Current patch verified
+Fiendish Codex,900,Epic,35,0,0,0,0,0,10,0,0,0,0,0,Basic haste component,1200,0,Current patch verified
+Blighting Jewel,1100,Epic,25,0,0,0,0,0,0,13,0,0,0,0,Magic penetration component,1100,0,Current patch verified
+Luden's Companion,2850,Legendary,100,0,0,600,0,0,10,0,0,0,0,0,Echo passive with charges,2600,400,Current patch verified
+Shadowflame,3200,Legendary,110,0,0,0,0,0,0,0,15,0,0,0,Cinderbloom crit vs low HP enemies,2900,350,Patch 25.11 current
+Rabadon's Deathcap,3500,Legendary,130,0,0,0,0,0,0,0,0,0,0,0,30% AP amplification,2600,900,Patch 25.11 current
+Void Staff,3000,Legendary,95,0,0,0,0,0,0,40,0,0,0,0,40% magic penetration,3746,400,Patch 25.11 current
+Cryptbloom,3000,Legendary,75,0,0,0,0,0,20,30,0,0,0,0,Magic pen + healing nova on takedown,3884,500,Patch 25.11 current
+Liandry's Torment,3000,Legendary,60,0,300,0,0,0,0,0,0,0,0,0,Max HP burn + combat damage amp,2001,600,Patch 25.11 current
+Horizon Focus,2800,Legendary,115,0,0,0,0,0,25,0,0,0,0,0,Long range damage reveal and focus,3550,400,Patch 25.11 current
+Zhonya's Hourglass,3250,Legendary,65,0,0,0,0,45,10,0,0,0,0,0,Stasis active,2800,450,Current patch verified
+Banshee's Veil,2600,Legendary,80,0,0,0,45,0,10,0,0,0,0,0,Spell shield passive,2900,300,Fill with current patch stats
+Cosmic Drive,3000,Legendary,80,0,200,0,0,0,30,0,0,0,0,0,Movement speed on ability use,3534,250,Fill with current patch stats
+Malignance,2700,Legendary,80,0,0,600,0,0,25,0,0,0,0,0,Ultimate haste and damage proc,3450,400,Fill with current patch stats
+Riftmaker,3200,Legendary,90,0,400,0,0,0,15,0,0,0,0,10,True damage conversion over time,3568,500,Fill with current patch stats
+Rod of Ages,2600,Legendary,40,0,300,300,0,0,0,0,0,0,0,0,Scaling stats over time,1900,700,Fill with current patch stats
+Archangel's Staff,2600,Legendary,80,0,0,860,0,0,25,0,0,0,0,0,Mana scaling AP,3110,400,Fill with current patch stats
+Seraph's Embrace,2600,Legendary,80,0,0,860,0,0,25,0,0,0,0,0,Shield active when transformed,3110,500,Fill with current patch stats
+Lich Bane,3100,Legendary,85,0,0,300,0,0,15,0,0,8,0,0,Spellblade proc,2750,400,Fill with current patch stats
+Stormsurge,2900,Legendary,95,0,0,0,0,0,0,0,15,0,0,0,Movement speed on takedown,2600,300,Fill with current patch stats
+Morellonomicon,2200,Legendary,70,0,250,0,0,0,15,0,0,0,0,0,Grievous wounds,2417,250,Fill with current patch stats
+Rylai's Crystal Scepter,2600,Legendary,75,0,400,0,0,0,0,0,0,0,0,0,Slow on spell damage,2568,300,Fill with current patch stats
+Spellslinger's Shoes,1100,Boots,0,0,0,0,0,0,0,10,18,0,45,0,Magic penetration and % magic pen,1463,200,Current patch verified
+Ionian Boots of Lucidity,900,Boots,0,0,0,0,0,0,10,0,0,0,45,0,Summoner spell haste,1040,150,Fill with current patch stats
+Mercury's Treads,1100,Boots,0,0,0,0,25,0,0,0,0,0,45,0,Tenacity,1040,200,Fill with current patch stats
+Doran's Ring,400,Starter,15,0,70,0,0,0,5,0,0,0,0,0,Mana restore on ability use,736,100,Fill with current patch stats
+Dark Seal,350,Starter,15,0,40,0,0,0,0,0,0,0,0,0,Glory stacking for AP,407,150,Fill with current patch stats
+Mejai's Soulstealer,1600,Legendary,20,0,100,0,0,0,0,0,0,10,0,0,Glory stacking with movement,1517,800,Fill with current patch stats
