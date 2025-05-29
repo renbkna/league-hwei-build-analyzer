@@ -1,6 +1,6 @@
 # Hwei Item Damage Calculator
 
-Calculate **real damage and DPS** of individual items vs specific MR/HP targets.
+Calculate **real damage** of individual items vs specific MR/HP targets.
 
 ## 🎯 Purpose
 
@@ -14,7 +14,7 @@ Calculate **real damage and DPS** of individual items vs specific MR/HP targets.
 ## ⚡ Quick Start
 
 1. **Download**: `core_items.csv`
-2. **Follow**: `SETUP_GUIDE_SIMPLIFIED.md` (30 minutes)
+2. **Follow**: `SETUP_GUIDE.md` (30 minutes)
 3. **Calculate**: Real damage per item vs any target
 
 ## 🔥 Core Items (Patch 25.11)
@@ -36,18 +36,13 @@ Step 2: Apply Flat Magic Pen (subtractive)
 Step 3: Calculate damage = Base × 100/(100 + Effective_MR)
 ```
 
-**Example**: Void Staff + Cryptbloom vs 100 MR
-1. % Pen: 100 × (1-0.4) × (1-0.3) = **42 MR remaining**
-2. Flat Pen: 42 - 0 = **42 effective MR**  
-3. Damage: 100/(100+42) = **70.4% damage dealt**
-
 ## 📁 Files
 
 ```
 hwei-item-calculator/
-├── core_items.csv              # 6 essential items + stats
-├── SETUP_GUIDE_SIMPLIFIED.md   # 30-min setup guide
-└── README.md                   # This file
+├── core_items.csv    # 6 essential items + stats
+├── SETUP_GUIDE.md    # 30-min setup guide
+└── README.md         # This file
 ```
 
 ## 🎮 Usage

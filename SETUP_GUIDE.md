@@ -1,264 +1,134 @@
-# Google Sheets Setup Guide
+# Hwei Item Damage Calculator - Setup Guide
 
-Detailed instructions for implementing the Hwei Build Analyzer in Google Sheets.
+**Purpose**: Calculate real damage of individual items vs specific MR/HP targets.
 
-## 🔧 Prerequisites
+## 🛠️ Setup (30 Minutes)
 
-- Google Account with access to Google Sheets
-- Basic familiarity with spreadsheet formulas
-- Downloaded CSV files from this repository
-
-## 📋 Step-by-Step Setup
-
-### Step 1: Create the Sheet Structure
-
-1. **Create New Google Sheet**
-   - Go to [sheets.google.com](https://sheets.google.com)
-   - Click "+ Blank" to create new sheet
-   - Rename to "Hwei Build Analyzer"
-
-2. **Create Required Tabs** (exact names required):
-   - `Dashboard` (rename the default "Sheet1")
-   - `Build Definitions`
+### **Step 1: Create Google Sheet**
+1. Go to [sheets.google.com](https://sheets.google.com)
+2. Create blank spreadsheet → Rename to "Hwei Item Calculator"
+3. Create 3 tabs:
    - `Items Database`
-   - `Stat Gold Values`
-   - `Runes Database`
+   - `Damage Calculator`
+   - `Target Settings`
 
-### Step 2: Import Data Files
+### **Step 2: Set Up Items Database Tab**
 
-For each tab, import the corresponding CSV:
+**Import the core_items.csv data:**
 
-#### A. Stat Gold Values Tab
-1. Select `Stat Gold Values` tab
-2. File → Import → Upload → Select `stat_gold_values.csv`
-3. Choose "Replace current sheet" → Import data
+| A | B | C | D | E | F | G | H | I | J | K |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Item Name | Gold Cost | AP | HP | Ability Haste | Magic Pen % | Magic Pen Flat | Passive Name | Passive Effect | Passive DPS | Raw Stat Value |
+| Shadowflame | 3200 | 110 | 0 | 0 | 0 | 15 | Cinderbloom | Crit vs <40% HP | 250 | 2900 |
+| Liandry's Torment | 3000 | 60 | 300 | 0 | 0 | 0 | Torment + Suffering | 1% max HP burn + 6% amp | 400 | 2001 |
+| Rabadon's Deathcap | 3500 | 130 | 0 | 0 | 0 | 0 | Magical Opus | 30% AP amplification | 0 | 2600 |
+| Horizon Focus | 2800 | 115 | 0 | 25 | 0 | 0 | Hypershot + Focus | Long range bonus | 300 | 3550 |
+| Void Staff | 3000 | 95 | 0 | 0 | 40 | 0 | Magic Penetration | 40% magic pen | 0 | 3746 |
+| Cryptbloom | 3000 | 75 | 0 | 20 | 30 | 0 | Life From Death | 30% pen + heal nova | 200 | 3884 |
 
-#### B. Items Database Tab
-1. Select `Items Database` tab
-2. File → Import → Upload → Select `hwei_items.csv`
-3. Choose "Replace current sheet" → Import data
+### **Step 3: Set Up Target Settings Tab**
 
-#### C. Runes Database Tab
-1. Select `Runes Database` tab
-2. File → Import → Upload → Select `runes_database.csv`
-3. Choose "Replace current sheet" → Import data
+**Create target input section:**
 
-### Step 3: Set Up Build Definitions Tab
+| A | B |
+|---|---|
+| **Target Settings** | **Value** |
+| Enemy Magic Resistance | 60 |
+| Enemy Max Health | 2000 |
+| Enemy Current Health % | 100 |
+| Hwei Base Combo Damage | 800 |
+| Hwei AP Ratio | 300 |
 
-#### Column Headers (Row 1):
-```
-A1: Build Name
-B1: Description
-C1: Champion
-D1: Keystone
-E1: Primary 1
-F1: Primary 2
-G1: Primary 3
-H1: Secondary Tree
-I1: Secondary 1
-J1: Secondary 2
-K1: Shard 1
-L1: Shard 2
-M1: Shard 3
-N1: Item 1
-O1: Item 2
-P1: Item 3
-Q1: Item 4
-R1: Item 5
-S1: Item 6
-T1: Total Gold Cost
-U1: Total Raw Stat Gold Value
-V1: Gold Efficiency %
-```
+### **Step 4: Set Up Damage Calculator Tab**
 
-#### Data Validation Setup:
+**Headers:**
 
-**For Item Columns (N1:S1):**
-1. Select range N2:S100 (covers 99 builds)
-2. Data → Data validation
-3. Criteria: List from a range
-4. Range: `Items Database!A:A`
-5. ✓ Show dropdown list in cell
-6. Done
+| A | B | C | D | E | F | G | H | I | J | K |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Items | Item 1 | Item 2 | Item 3 | Item 4 | Item 5 | Item 6 | Total AP | Effective MR | Base Damage | Final Damage |
 
-**For Rune Columns (D1:M1):**
-1. Select range D2:M100
-2. Data → Data validation
-3. Criteria: List from a range
-4. Range: `Runes Database!A:A`
-5. Done
+**Row 2 - Item Selection (Data Validation):**
+- Select B2:G2
+- Data → Data validation → List from range: `Items Database!A:A`
 
-#### Formulas for Build Definitions:
+**Row 3 - Calculations:**
 
-**T2 (Total Gold Cost):**
-```
-=SUMPRODUCT(IFERROR(VLOOKUP(N2:S2,'Items Database'!A:B,2,FALSE),0))
+**H3 (Total AP with Rabadon's):**
+```excel
+=SUMPRODUCT(IFERROR(VLOOKUP(B2:G2,'Items Database'!A:C,3,FALSE),0)) * 
+(1 + IF(COUNTIF(B2:G2,"Rabadon's Deathcap")>0,0.3,0))
 ```
 
-**U2 (Total Raw Stat Gold Value):**
-```
-=SUMPRODUCT(IFERROR(VLOOKUP(N2:S2,'Items Database'!A:T,20,FALSE),0))
-```
-
-**V2 (Gold Efficiency %):**
-```
-=IF(T2=0,0,U2/T2)
+**I3 (Effective MR after penetration):**
+```excel
+=MAX(0,'Target Settings'!B2 * (1-SUMPRODUCT(IFERROR(VLOOKUP(B2:G2,'Items Database'!A:F,6,FALSE),0))/100) - SUMPRODUCT(IFERROR(VLOOKUP(B2:G2,'Items Database'!A:G,7,FALSE),0)))
 ```
 
-**Copy formulas down to row 100**
-
-### Step 4: Set Up Dashboard Tab
-
-#### Column Headers:
-```
-A1: Build Selection
-B1: Build 1
-C1: Build 2
-D1: Build 3
-A3: Total Gold Cost
-A4: Raw Stat Gold Value
-A5: Gold Efficiency %
-A6: Your Calculated DPS
-A7: Your Calculated Total Damage
-A8: DPS per Gold
-A9: Damage per Gold
-A10: Build Description
+**J3 (Base Damage):**
+```excel
+='Target Settings'!B5 + (H3 * 'Target Settings'!B6/100)
 ```
 
-#### Build Selection Dropdowns:
-**B2, C2, D2:**
-1. Select each cell
-2. Data → Data validation
-3. Criteria: List from a range
-4. Range: `Build Definitions!A:A`
-5. Done
-
-#### Dashboard Formulas:
-
-**B3 (Build 1 Total Gold Cost):**
-```
-=IFERROR(VLOOKUP(B2,'Build Definitions'!A:T,20,FALSE),0)
+**K3 (Final Damage including passives):**
+```excel
+=(J3 * 100/(100+I3)) + SUMPRODUCT(IFERROR(VLOOKUP(B2:G2,'Items Database'!A:J,10,FALSE),0))
 ```
 
-**B4 (Build 1 Raw Stat Gold Value):**
-```
-=IFERROR(VLOOKUP(B2,'Build Definitions'!A:U,21,FALSE),0)
-```
+### **Step 5: Progressive Item Analysis**
 
-**B5 (Build 1 Gold Efficiency):**
-```
-=IFERROR(VLOOKUP(B2,'Build Definitions'!A:V,22,FALSE),0)
-```
+**Add rows for each item count:**
 
-**B8 (DPS per Gold):**
-```
-=IF(AND(B6>0,B3>0),B6/B3*1000,0)
-```
+| A | H | I | J | K |
+|---|---|---|---|---|
+| **1 Item** | [Total AP] | [Eff MR] | [Base Dmg] | [Final Dmg] |
+| **2 Items** | [Total AP] | [Eff MR] | [Base Dmg] | [Final Dmg] |
+| **3 Items** | [Total AP] | [Eff MR] | [Base Dmg] | [Final Dmg] |
+| **4 Items** | [Total AP] | [Eff MR] | [Base Dmg] | [Final Dmg] |
+| **5 Items** | [Total AP] | [Eff MR] | [Base Dmg] | [Final Dmg] |
+| **6 Items** | [Total AP] | [Eff MR] | [Base Dmg] | [Final Dmg] |
 
-**B9 (Damage per Gold):**
-```
-=IF(AND(B7>0,B3>0),B7/B3*1000,0)
-```
+Copy the formulas from row 3 to each subsequent row.
 
-**B10 (Build Description):**
-```
-=IFERROR(VLOOKUP(B2,'Build Definitions'!A:B,2,FALSE),"")
-```
+## 🎮 How to Use
 
-**Copy all formulas to columns C and D for Build 2 and Build 3**
+### **Set Your Target:**
+1. Go to Target Settings tab
+2. Input enemy MR (typical values: 30-120)
+3. Input enemy max HP (typical: 1500-3000)
+4. Set enemy current HP % (for Shadowflame passive)
 
-### Step 5: Conditional Formatting
+### **Analyze Item Progression:**
+1. Go to Damage Calculator tab
+2. Select your item build order in the dropdowns
+3. See damage increase with each additional item
+4. Compare different item orders
 
-#### Gold Efficiency Formatting:
-1. Select Dashboard range B5:D5
-2. Format → Conditional formatting
-3. Format cells if: Custom formula is
-4. Value: `=$B5>=1` (≥100% efficiency)
-5. Formatting: Green background
-6. Add another rule: `=$B5<1` (Red background)
-7. Done
+### **Example Analysis:**
 
-#### Repeat for Build Definitions V2:V100
+**Target: 60 MR, 2000 HP Enemy**
 
-### Step 6: Add Sample Builds
+| Items | Total AP | Effective MR | Final Damage |
+|-------|----------|--------------|------------|
+| **Shadowflame** | 110 | 45 | 1,940 |
+| **+ Rabadon's** | 312 | 45 | 2,748 |
+| **+ Void Staff** | 407 | 27 | 3,456 |
+| **+ Liandry's** | 467 | 27 | 4,112 |
 
-#### Example Build 1:
-- **Build Name**: Standard Burst
-- **Description**: High AP burst for team fights
-- **Items**: Luden's Companion, Shadowflame, Rabadon's Deathcap, Void Staff, Zhonya's Hourglass, Sorcerer's Shoes
+**Key Insights:**
+- Shadowflame → Rabadon's: +808 damage
+- Adding Void Staff: +708 damage (MR reduction)
+- Adding Liandry's: +656 damage (passive burn)
 
-#### Example Build 2:
-- **Build Name**: Scaling Late Game
-- **Description**: Maximum late game damage
-- **Items**: Rod of Ages, Archangel's Staff, Rabadon's Deathcap, Void Staff, Lich Bane, Sorcerer's Shoes
+## 🧮 Magic Penetration Calculation
 
-### Step 7: Testing Your Setup
+**Order of Operations:**
+1. **% Magic Pen** applied first (multiplicative)
+2. **Flat Magic Pen** applied second (subtractive)
+3. **Cannot go below 0 MR**
 
-1. **Add a build** in Build Definitions tab
-2. **Check calculations** automatically populate
-3. **Select build** in Dashboard dropdown
-4. **Input test DPS values** (B6, C6, D6)
-5. **Verify ratios** calculate correctly
+**Example: Void Staff + Cryptbloom vs 100 MR**
+1. % Pen: 100 × (1-0.4) × (1-0.3) = 42 MR remaining
+2. Flat Pen: 42 - 0 = 42 effective MR
+3. Damage multiplier: 100/(100+42) = 70.4%
 
-## 🎨 Optional Enhancements
-
-### Charts and Visualizations
-1. Insert → Chart
-2. Select Dashboard data range (B3:D9)
-3. Chart type: Column chart
-4. Customize with build names as labels
-
-### Advanced Formulas
-
-**Highest DPS Build (Dashboard A12):**
-```
-=INDEX(B2:D2,MATCH(MAX(B6:D6),B6:D6,0))
-```
-
-**Most Efficient Build (Dashboard A13):**
-```
-=INDEX(B2:D2,MATCH(MAX(B5:D5),B5:D5,0))
-```
-
-## 🔧 Troubleshooting
-
-### Common Issues:
-
-**"#N/A" errors in formulas:**
-- Check that tab names match exactly
-- Verify CSV import was successful
-- Ensure data validation ranges are correct
-
-**Dropdowns not working:**
-- Re-check data validation range references
-- Make sure ranges include headers
-
-**Calculations showing 0:**
-- Verify item names match exactly between tabs
-- Check that gold values are numbers, not text
-
-**Wrong gold efficiency:**
-- Confirm stat gold values are current (check patch notes)
-- Verify item stats are accurate
-
-## 📊 Usage Tips
-
-1. **Test builds in Practice Tool** before inputting DPS values
-2. **Use consistent testing conditions** (same target, same combo)
-3. **Update item data** when new patches release
-4. **Compare similar builds** to identify optimal variations
-5. **Track performance over time** by saving different versions
-
-## 🔄 Maintenance
-
-### Monthly Tasks:
-- Check for new Hwei-relevant items
-- Verify gold values haven't changed
-- Update rune options if new runes are added
-
-### Patch Day Tasks:
-- Review patch notes for item changes
-- Update item stats in Items Database
-- Re-test builds if major changes occurred
-
-Your Hwei Build Analyzer is now ready to optimize your builds! 🎯
+Your calculator now shows **real item-by-item damage progression** vs specific targets! 🎯
