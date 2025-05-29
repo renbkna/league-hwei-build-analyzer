@@ -1,0 +1,7 @@
+Item Name,Gold Cost,AP,HP,Ability Haste,Magic Pen %,Magic Pen Flat,Passive Name,Passive Effect,Passive DPS Estimate,Total Raw Stat Gold Value
+Shadowflame,3200,110,0,0,0,15,Cinderbloom,Critical strikes vs enemies below 40% max HP for 120% damage,250,2900
+Liandry's Torment,3000,60,300,0,0,0,Torment + Suffering,1% max HP burn per 0.5s for 3s + 6% damage amp in combat,400,2001
+Rabadon's Deathcap,3500,130,0,0,0,0,Magical Opus,30% AP amplification,0,2600
+Horizon Focus,2800,115,0,25,0,0,Hypershot + Focus,Long range ability damage bonus and reveal,300,3550
+Void Staff,3000,95,0,0,40,0,Magic Penetration,40% magic penetration,0,3746
+Cryptbloom,3000,75,0,20,30,0,Life From Death,30% magic pen + healing nova on takedown,200,3884
