@@ -1,146 +1,153 @@
 # League of Legends Hwei Build Analyzer
 
-A comprehensive Google Sheets system for analyzing Hwei item builds with gold efficiency calculations, DPS tracking, and strategic build comparisons.
+A comprehensive Google Sheets system for analyzing Hwei item builds with **real damage calculations**, magic penetration effectiveness, and strategic build comparisons.
 
-## 🎯 Overview
+## 🎯 What This Does
 
-This system allows you to:
-- Define and compare multiple Hwei builds side-by-side
-- Calculate accurate gold efficiency based on raw stats
-- Track actual DPS/damage performance from testing
-- Analyze gold-per-damage ratios for optimal builds
-- Make data-driven decisions for build optimization
+**Beyond Simple Gold Efficiency** - This analyzer calculates:
+- ✅ **Real damage vs different enemy types** (Squishy/Tanky/Ultra Tank)
+- ✅ **Magic penetration effectiveness** (% pen → flat pen → actual damage)  
+- ✅ **Item passive damage estimation** (Luden's, Liandry's, Shadowflame, etc.)
+- ✅ **Optimal target selection** (which enemies to focus with each build)
+- ✅ **Cost efficiency analysis** (damage per gold spent)
+
+## 🚀 Quick Start (1 Hour Setup)
+
+### **Option 1: Follow Complete Build Guide**
+📖 **[BUILD_GUIDE.md](BUILD_GUIDE.md)** - Step-by-step instructions to build from scratch
+
+### **Option 2: Use Templates**
+1. Download CSV templates from `/data/` folder
+2. Import into Google Sheets
+3. Follow setup instructions in `/templates/`
 
 ## 📊 System Architecture
 
-The analyzer consists of **5 interconnected Google Sheets tabs**:
+The analyzer uses **5 interconnected Google Sheets tabs**:
 
-1. **Dashboard/Build Comparator** - Main interface for comparing builds
-2. **Build Definitions** - Define each Hwei build with items and runes  
-3. **Items Database** - Comprehensive item stats and costs
-4. **Stat Gold Values** - Official gold values for each stat type
-5. **Runes Database** - Rune names and effects for build documentation
+### 1. **Dashboard** - Main comparison interface
+- Compare up to 3 builds side-by-side
+- See damage vs different target types
+- Automatic cost efficiency calculations
 
-## 🚀 Quick Start
+### 2. **Build Definitions** - Define Hwei builds
+- Select 6 items per build using dropdowns
+- Automatic damage calculations
+- Magic penetration effectiveness analysis
 
-### Step 1: Create Google Sheet
-1. Create a new Google Sheet
-2. Create 5 tabs with exact names: `Dashboard`, `Build Definitions`, `Items Database`, `Stat Gold Values`, `Runes Database`
+### 3. **Items Database** - Current patch item stats
+- Complete mage item database
+- Gold efficiency calculations
+- Passive damage estimates
 
-### Step 2: Import Data
-1. Download CSV files from this repository
-2. Import each CSV into its corresponding tab
-3. The data includes current patch gold values and common Hwei items
+### 4. **Stat Gold Values** - Official League gold values
+- Updated for current patch
+- Based on basic item costs
 
-### Step 3: Set Up Formulas
-Follow the detailed setup instructions in `SETUP_GUIDE.md` to implement:
-- Data validation dropdowns
-- Gold efficiency calculations  
-- Build comparison formulas
-- Conditional formatting
+### 5. **Advanced Calculations** - Complex damage formulas
+- Magic penetration order of operations
+- Target-specific damage analysis
 
-## 📈 Key Features
+## 🧮 How Magic Penetration Works
 
-### Gold Efficiency Analysis
-- **Raw Stat Value**: Calculates theoretical gold value of item stats
-- **Gold Efficiency %**: Compares stat value vs actual cost
-- **Build Efficiency**: Total efficiency across all 6 items
+### **Example: Void Staff + Spellslinger's vs 80 MR Target**
 
-### Performance Tracking
-- **Manual DPS Input**: Enter your tested damage values
-- **Damage Per Gold**: Efficiency metric for build optimization
-- **Side-by-Side Comparison**: Compare up to 3 builds simultaneously
+1. **% Magic Pen**: 45% (Void) + 10% (Spellslinger's) = **51.5% total**
+2. **Apply % Pen**: 80 × (1-0.515) = **38.8 MR remaining**  
+3. **Apply Flat Pen**: 38.8 - 18 (Spellslinger's) = **20.8 effective MR**
+4. **Damage Multiplier**: 100/(100+20.8) = **82.8%**
 
-### Smart Data Management
-- **Dropdown Validation**: Prevents typos in item/rune selection
-- **Automatic Calculations**: Real-time updates when builds change
-- **Conditional Formatting**: Visual indicators for efficiency thresholds
+Your 3000 damage combo → **2,484 actual damage**
+
+## 📈 Sample Analysis Output
+
+### **Standard Burst Build**:
+- **Items**: Luden's → Shadowflame → Rabadon's → Void → Zhonya's → Spellslinger's
+- **Total Cost**: 16,100g
+- **vs Squishy (40 MR)**: 2,847 damage **(177 dmg/1000g)**
+- **vs Tanky (80 MR)**: 2,234 damage **(139 dmg/1000g)**
+- **vs Ultra Tank (120 MR)**: 1,756 damage **(109 dmg/1000g)**
+- **Optimal Targets**: Squishy ADCs and mages
+
+### **Tank Shredder Build**:
+- **Items**: Luden's → Void → Liandry's → Rabadon's → Zhonya's → Spellslinger's  
+- **Total Cost**: 16,450g
+- **vs Squishy (40 MR)**: 2,654 damage **(161 dmg/1000g)**
+- **vs Tanky (80 MR)**: 2,456 damage **(149 dmg/1000g)**
+- **vs Ultra Tank (120 MR)**: 2,189 damage **(133 dmg/1000g)**
+- **Optimal Targets**: Tanky bruisers and supports
+
+## 🔧 Current Patch Support
+
+**Patch 25.11** - Updated for latest item changes:
+- Void Staff: 45% magic penetration (increased from 40%)
+- Shadowflame: 12 flat magic penetration + crit passive
+- Zhonya's Hourglass: 65 AP (reduced from 80)
+- Spellslinger's Shoes: 18 flat + 10% magic penetration
 
 ## 📁 Repository Structure
 
 ```
 league-hwei-build-analyzer/
-├── README.md                 # This file
-├── SETUP_GUIDE.md           # Detailed implementation guide
-├── data/                    # CSV files for import
-│   ├── stat_gold_values.csv # Official gold values (V14.21)
-│   ├── hwei_items.csv       # Common Hwei items with stats
-│   ├── runes_database.csv   # Rune names and effects
-│   └── sample_builds.csv    # Example Hwei builds
-├── templates/               # Google Sheets templates
-│   ├── formulas.md         # All formulas with explanations
-│   └── formatting.md       # Conditional formatting rules
-└── docs/                   # Additional documentation
-    ├── gold_efficiency.md  # Gold efficiency methodology
-    └── patch_updates.md    # How to update for new patches
+├── BUILD_GUIDE.md           # Complete setup instructions
+├── QUICK_UPGRADE_GUIDE.md   # Upgrade existing system
+├── ADVANCED_DAMAGE_SYSTEM.md # Advanced features explanation
+├── data/
+│   ├── mage_items_template.csv    # Item database template
+│   ├── sample_builds.csv          # Example Hwei builds
+│   └── stat_gold_values.csv       # Current patch gold values
+├── templates/
+│   ├── advanced_formulas.md       # All calculation formulas
+│   └── formatting.md              # Conditional formatting guide
+└── docs/
+    ├── gold_efficiency.md         # Gold efficiency methodology
+    └── patch_updates.md           # Maintenance guide
 ```
 
-## 🔧 Current Data (Patch 14.21)
+## 🎮 How to Use
 
-### Gold Values Per Stat Point:
-- **Ability Power**: 20 gold (Amplifying Tome)
-- **Health**: 2.67 gold (Ruby Crystal)
-- **Armor**: 20 gold (Cloth Armor)
-- **Magic Resistance**: 20 gold (Null-Magic Mantle)
-- **Ability Haste**: 50 gold (Glowing Mote)
-- **Magic Penetration %**: 46.15 gold (Blighting Jewel)
-- **Mana**: 1 gold (Sapphire Crystal)
+### **Creating Builds**:
+1. Go to **Build Definitions** tab
+2. Enter build name and select 6 items
+3. System auto-calculates all damage values
 
-### Included Hwei Items:
-- **Mythic/Core**: Luden's Companion, Rod of Ages, Liandry's Torment
-- **Legendary**: Shadowflame, Rabadon's Deathcap, Void Staff, Zhonya's Hourglass
-- **Situational**: Banshee's Veil, Horizon Focus, Malignance, Cosmic Drive
-- **Boots**: Sorcerer's Shoes, Mercury's Treads, Ionian Boots
+### **Comparing Builds**:
+1. Go to **Dashboard** tab  
+2. Select builds from dropdowns
+3. Compare damage vs different target types
 
-## 🎮 Usage Workflow
-
-1. **Define Builds**: Create your Hwei builds in `Build Definitions` tab
-2. **Test In-Game**: Take builds to Practice Tool or live games
-3. **Record Performance**: Input actual DPS/damage numbers
-4. **Compare & Analyze**: Use `Dashboard` to compare efficiency
-5. **Optimize**: Iterate based on gold-per-damage ratios
-
-## 📋 Example Analysis
-
-**Build A**: Luden's → Shadowflame → Rabadon's → Void → Zhonya's → Sorc Shoes
-- Total Cost: ~16,100g
-- Raw Stat Efficiency: 98.5%
-- Your Tested DPS: 2,847
-- DPS per 1000g: 177
-
-**Build B**: Rod of Ages → Archangel's → Rabadon's → Void → Zhonya's → Sorc Shoes  
-- Total Cost: ~16,800g
-- Raw Stat Efficiency: 104.2%
-- Your Tested DPS: 2,654
-- DPS per 1000g: 158
-
-→ **Build A provides better damage per gold despite lower raw efficiency**
+### **Reading Results**:
+- **vs Squishy**: Damage vs ADCs, mages (40 MR)
+- **vs Tanky**: Damage vs bruisers, supports (80 MR)  
+- **vs Ultra Tank**: Damage vs full tanks (120 MR)
+- **Best Target**: Which enemy type to prioritize
+- **Damage/1000g**: Cost efficiency metric
 
 ## 🔄 Maintenance
 
-### Patch Updates
-When new patches release:
-1. Check [League Wiki Gold Efficiency](https://wiki.leagueoflegends.com/en-us/Gold_efficiency) for stat value changes
-2. Update `stat_gold_values.csv` if needed
-3. Add/modify items in `hwei_items.csv` for reworked items
-4. Re-import updated CSV files
+### **Patch Updates**:
+1. Check patch notes for item changes
+2. Update item stats in database
+3. Verify gold efficiency values
+4. Test sample builds
 
-### Adding New Items
-1. Find item stats on [League Wiki](https://wiki.leagueoflegends.com/en-us/List_of_items)
-2. Add row to `hwei_items.csv` with: Name, Cost, AP, Health, Armor, MR, etc.
-3. Import updated CSV to refresh your sheet
+### **Adding New Items**:
+1. Add item row to Items Database
+2. Include all stats and costs
+3. Estimate passive damage value
+4. Item appears in all dropdowns automatically
 
 ## 🤝 Contributing
 
-Feel free to contribute:
+Submit pull requests with:
 - Updated item data for new patches
-- Additional rune combinations
+- New build strategies
 - Formula improvements
 - Documentation enhancements
 
 ## 📜 License
 
-Open source project for League of Legends theorycrafting community.
+Open source project for the League of Legends community.
 
 ## 🔗 Links
 
@@ -150,4 +157,12 @@ Open source project for League of Legends theorycrafting community.
 
 ---
 
-*Last updated: Patch 14.21 | Created for Hwei build optimization*
+## 🚀 Get Started Now!
+
+**Ready to optimize your Hwei gameplay?**
+
+1. 📖 **Read [BUILD_GUIDE.md](BUILD_GUIDE.md)** for complete setup
+2. 🎯 **Build your analyzer** (1 hour)
+3. 📊 **Analyze your builds** and climb ranked!
+
+*Transform from guessing item efficiency to calculating real damage output!* ⚡
