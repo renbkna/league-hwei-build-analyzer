@@ -1,0 +1,7 @@
+Item Name,Gold Cost,Item Category,AP,AD,HP,Mana,MR,Armor,Ability Haste,Magic Pen %,Magic Pen Flat,Move Speed %,Move Speed Flat,Omnivamp,Unique Effect,Total Raw Stat Gold Value,Passive Estimated Value,Notes
+Amplifying Tome,400,Basic,20,0,0,0,0,0,0,0,0,0,0,0,Basic AP component,400,0,Current patch verified
+Blasting Wand,850,Basic,40,0,0,0,0,0,0,0,0,0,0,0,Basic AP component,800,0,Current patch verified
+Needlessly Large Rod,1250,Basic,60,0,0,0,0,0,0,0,0,0,0,0,Basic AP component,1200,0,Current patch verified
+Sapphire Crystal,350,Basic,0,0,0,250,0,0,0,0,0,0,0,0,Basic mana component,250,0,Current patch verified
+Lost Chapter,1300,Epic,40,0,0,300,0,0,0,0,0,0,0,0,Mana restore on level,1100,200,Current patch verified
+Fiendish Codex,900,Epic,35,0,0,0,0,0,10,0,0,0,0,0,Basic haste component,1
