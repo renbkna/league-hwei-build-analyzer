@@ -1,0 +1,33 @@
+Item Name,Gold Cost,Item Category,AP,AD,HP,Mana,MR,Armor,Ability Haste,Magic Pen %,Magic Pen Flat,Move Speed %,Move Speed Flat,Omnivamp,Unique Effect,Total Raw Stat Gold Value,Passive Estimated Value,Notes
+Amplifying Tome,XXX,Basic,XX,0,0,0,0,0,0,0,0,0,0,0,Basic AP component,XXX,0,Fill with current patch stats
+Blasting Wand,XXX,Basic,XX,0,0,0,0,0,0,0,0,0,0,0,Basic AP component,XXX,0,Fill with current patch stats
+Needlessly Large Rod,XXX,Basic,XX,0,0,0,0,0,0,0,0,0,0,0,Basic AP component,XXX,0,Fill with current patch stats
+Sapphire Crystal,XXX,Basic,0,0,0,XXX,0,0,0,0,0,0,0,0,Basic mana component,XXX,0,Fill with current patch stats
+Lost Chapter,XXX,Epic,XX,0,0,XXX,0,0,0,0,0,0,0,0,Mana restore on level,XXX,XXX,Fill with current patch stats
+Fiendish Codex,XXX,Epic,XX,0,0,0,0,0,XX,0,0,0,0,0,Basic haste component,XXX,0,Fill with current patch stats
+Blighting Jewel,XXX,Epic,XX,0,0,0,0,0,0,XX,0,0,0,0,Magic penetration component,XXX,0,Fill with current patch stats
+Luden's Companion,XXX,Legendary,XXX,0,0,XXX,0,0,XX,0,0,0,0,0,Echo passive with charges,XXX,XXX,Fill with current patch stats
+Shadowflame,XXX,Legendary,XXX,0,0,0,0,0,0,0,XX,0,0,0,Adaptive magic pen and crit passive,XXX,XXX,Fill with current patch stats
+Rabadon's Deathcap,XXX,Legendary,XXX,0,0,0,0,0,0,0,0,0,0,0,XX% AP amplification,XXX,XXX,Fill with current patch stats
+Void Staff,XXX,Legendary,XX,0,0,0,0,0,0,XX,0,0,0,0,Percentage magic penetration,XXX,XXX,Fill with current patch stats
+Zhonya's Hourglass,XXX,Legendary,XX,0,0,0,0,XX,XX,0,0,0,0,0,Stasis active,XXX,XXX,Fill with current patch stats
+Banshee's Veil,XXX,Legendary,XX,0,0,0,XX,0,XX,0,0,0,0,0,Spell shield passive,XXX,XXX,Fill with current patch stats
+Cosmic Drive,XXX,Legendary,XX,0,XXX,0,0,0,XX,0,0,0,0,0,Movement speed on ability use,XXX,XXX,Fill with current patch stats
+Horizon Focus,XXX,Legendary,XX,0,0,0,0,0,XX,0,0,0,0,0,Damage amp on long-range abilities,XXX,XXX,Fill with current patch stats
+Malignance,XXX,Legendary,XX,0,0,XXX,0,0,XX,0,0,0,0,0,Ultimate haste and damage proc,XXX,XXX,Fill with current patch stats
+Liandry's Torment,XXX,Legendary,XX,0,XXX,0,0,0,XX,0,0,0,0,0,Burn based on current HP,XXX,XXX,Fill with current patch stats
+Riftmaker,XXX,Legendary,XX,0,XXX,0,0,0,XX,0,0,0,0,XX,True damage conversion over time,XXX,XXX,Fill with current patch stats
+Rod of Ages,XXX,Legendary,XX,0,XXX,XXX,0,0,0,0,0,0,0,0,Scaling stats over time,XXX,XXX,Fill with current patch stats
+Archangel's Staff,XXX,Legendary,XX,0,0,XXX,0,0,XX,0,0,0,0,0,Mana scaling AP,XXX,XXX,Fill with current patch stats
+Seraph's Embrace,XXX,Legendary,XX,0,0,XXX,0,0,XX,0,0,0,0,0,Shield active when transformed,XXX,XXX,Fill with current patch stats
+Lich Bane,XXX,Legendary,XX,0,0,XXX,0,0,XX,0,0,X,0,0,Spellblade proc,XXX,XXX,Fill with current patch stats
+Cryptbloom,XXX,Legendary,XX,0,0,0,0,0,XX,XX,0,0,0,0,Grievous wounds and haste focus,XXX,XXX,Fill with current patch stats
+Stormsurge,XXX,Legendary,XX,0,0,0,0,0,0,0,XX,0,0,0,Movement speed on takedown,XXX,XXX,Fill with current patch stats
+Morellonomicon,XXX,Legendary,XX,0,XXX,0,0,0,XX,0,0,0,0,0,Grievous wounds,XXX,XXX,Fill with current patch stats
+Rylai's Crystal Scepter,XXX,Legendary,XX,0,XXX,0,0,0,0,0,0,0,0,0,Slow on spell damage,XXX,XXX,Fill with current patch stats
+Spellslinger's Shoes,XXX,Boots,0,0,0,0,0,0,0,XX,XX,0,XX,0,Magic penetration and % magic pen,XXX,XXX,Fill with current patch stats
+Ionian Boots of Lucidity,XXX,Boots,0,0,0,0,0,0,XX,0,0,0,XX,0,Summoner spell haste,XXX,XXX,Fill with current patch stats
+Mercury's Treads,XXX,Boots,0,0,0,0,XX,0,0,0,0,0,XX,0,Tenacity,XXX,XXX,Fill with current patch stats
+Doran's Ring,XXX,Starter,XX,0,XX,0,0,0,X,0,0,0,0,0,Mana restore on ability use,XXX,XXX,Fill with current patch stats
+Dark Seal,XXX,Starter,XX,0,XX,0,0,0,0,0,0,0,0,0,Glory stacking for AP,XXX,XXX,Fill with current patch stats
+Mejai's Soulstealer,XXX,Legendary,XX,0,XXX,0,0,0,0,0,0,XX,0,0,Glory stacking with movement,XXX,XXX,Fill with current patch stats
