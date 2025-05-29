@@ -1,0 +1,35 @@
+Item Name,Gold Cost,Item Category,AP,AD,HP,Mana,MR,Armor,Ability Haste,Magic Pen %,Magic Pen Flat,Move Speed %,Move Speed Flat,Unique Effect,Total Raw Stat Gold Value
+Amplifying Tome,400,Basic,20,0,0,0,0,0,0,0,0,0,0,Basic AP component,400
+Blasting Wand,850,Basic,40,0,0,0,0,0,0,0,0,0,0,Basic AP component,800
+Needlessly Large Rod,1250,Basic,60,0,0,0,0,0,0,0,0,0,0,Basic AP component,1200
+Sapphire Crystal,350,Basic,0,0,0,250,0,0,0,0,0,0,0,Basic mana component,250
+Lost Chapter,1300,Epic,40,0,0,300,0,0,0,0,0,0,0,Mana restore on level,1100
+Fiendish Codex,900,Epic,35,0,0,0,0,0,10,0,0,0,0,Basic haste component,1200
+Glowing Mote,400,Basic,0,0,0,0,0,0,10,0,0,0,0,Basic haste component,500
+Blighting Jewel,1100,Epic,25,0,0,0,0,0,0,13,0,0,0,Magic penetration component,1100
+Luden's Companion,2850,Legendary,100,0,0,600,0,0,10,0,0,0,0,Echo passive,2100
+Shadowflame,3100,Legendary,120,0,0,0,0,0,0,0,10,0,0,Adaptive magic pen,2867
+Rabadon's Deathcap,3600,Legendary,120,0,0,0,0,0,0,0,0,0,0,35% AP amplification,2400
+Void Staff,2700,Legendary,80,0,0,0,0,0,0,45,0,0,0,Magic penetration,3677
+Zhonya's Hourglass,3250,Legendary,80,0,0,0,0,45,10,0,0,0,0,Stasis active,2900
+Banshee's Veil,2600,Legendary,80,0,0,0,45,0,10,0,0,0,0,Spell shield passive,2900
+Cosmic Drive,3000,Legendary,80,0,200,0,0,0,30,0,0,0,0,Movement speed passive,3034
+Horizon Focus,3200,Legendary,85,0,0,0,0,0,25,0,0,0,0,Hypershot passive,3950
+Malignance,2700,Legendary,80,0,0,600,0,0,25,0,0,0,0,Haunt passive,3450
+Liandry's Torment,3200,Legendary,90,0,0,600,0,0,20,0,0,0,0,Burn passive,3400
+Riftmaker,3200,Legendary,90,0,400,0,0,0,15,0,0,0,0,True damage passive,3818
+Rod of Ages,2600,Legendary,40,0,300,300,0,0,0,0,0,0,0,Scaling stats,1900
+Archangel's Staff,2600,Legendary,80,0,0,860,0,0,25,0,0,0,0,Mana scaling,3110
+Seraph's Embrace,2600,Legendary,80,0,0,860,0,0,25,0,0,0,0,Shield active,3110
+Lich Bane,3100,Legendary,85,0,0,300,0,0,15,0,0,8,0,Spellblade passive,2750
+Nashor's Tooth,3000,Legendary,90,0,0,0,0,0,50,0,0,0,0,Attack speed scaling,4300
+Morellonomicon,2200,Legendary,70,0,250,0,0,0,15,0,0,0,0,Grievous wounds,2417
+Rylai's Crystal Scepter,2600,Legendary,75,0,400,0,0,0,0,0,0,0,0,Slow passive,2568
+Sorcerer's Shoes,1100,Boots,0,0,0,0,0,0,0,0,18,0,45,Magic penetration,1380
+Ionian Boots of Lucidity,900,Boots,0,0,0,0,0,0,10,0,0,0,45,Summoner spell haste,1040
+Mercury's Treads,1100,Boots,0,0,0,0,25,0,0,0,0,0,45,Tenacity,1040
+Plated Steelcaps,1100,Boots,0,0,0,0,0,20,0,0,0,0,45,Basic attack damage reduction,940
+Doran's Ring,400,Starter,15,0,70,0,0,0,5,0,0,0,0,Mana restore passive,736
+Dark Seal,350,Starter,15,0,40,0,0,0,0,0,0,0,0,Glory stacking,407
+Mejai's Soulstealer,1600,Legendary,20,0,100,0,0,0,0,0,0,10,0,Glory stacking,1117
+Elixir of Sorcery,500,Consumable,50,0,0,0,0,0,0,0,25,0,0,Temporary buff,2167

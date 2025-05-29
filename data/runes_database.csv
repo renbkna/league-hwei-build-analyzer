@@ -1,0 +1,70 @@
+Rune Name,Rune Type,Rune Tree,Short Effect Description
+Arcane Comet,Keystone,Sorcery,Damaging abilities call down comet
+Summon Aery,Keystone,Sorcery,Abilities send Aery to help or harm
+Phase Rush,Keystone,Sorcery,Landing abilities grants movement speed
+Manaflow Band,Primary Slot 1,Sorcery,Hitting enemies restores mana
+Nullifying Orb,Primary Slot 1,Sorcery,Gain magic shield when low HP
+Nimbus Cloak,Primary Slot 1,Sorcery,Summoner spells grant movement speed
+Transcendence,Primary Slot 2,Sorcery,Gain ability haste over time
+Celerity,Primary Slot 2,Sorcery,Movement speed bonuses are enhanced
+Absolute Focus,Primary Slot 2,Sorcery,Gain AP when above 70% health
+Scorch,Primary Slot 3,Sorcery,Abilities burn enemies
+Waterwalking,Primary Slot 3,Sorcery,Movement speed and AP in river
+Gathering Storm,Primary Slot 3,Sorcery,Gain AP over time
+Electrocute,Keystone,Domination,3 separate attacks burst damage
+Predator,Keystone,Domination,Channel to gain movement speed
+Dark Harvest,Keystone,Domination,Takedowns reset for more damage
+Hail of Blades,Keystone,Domination,First 3 attacks are much faster
+Cheap Shot,Primary Slot 1,Domination,Damage enemies with impaired movement
+Taste of Blood,Primary Slot 1,Domination,Heal when damaging enemies
+Sudden Impact,Primary Slot 1,Domination,Penetration after dashing/blinking
+Zombie Ward,Primary Slot 2,Domination,Killing wards creates friendly wards
+Ghost Poro,Primary Slot 2,Domination,Enter brush to spawn poro
+Eyeball Collection,Primary Slot 2,Domination,Collect eyeballs for AD or AP
+Treasure Hunter,Primary Slot 3,Domination,Unique takedowns grant gold
+Ingenious Hunter,Primary Slot 3,Domination,Item haste per unique takedown
+Relentless Hunter,Primary Slot 3,Domination,Movement speed per unique takedown
+Ultimate Hunter,Primary Slot 3,Domination,Ultimate haste per unique takedown
+Press the Attack,Keystone,Precision,3 attacks make enemies vulnerable
+Lethal Tempo,Keystone,Precision,Attack speed stacks infinitely
+Fleet Footwork,Keystone,Precision,Heal and movement speed on attacks
+Conqueror,Keystone,Precision,Adaptive damage stacks on combat
+Overheal,Primary Slot 1,Precision,Excess healing becomes shield
+Triumph,Primary Slot 1,Precision,Takedowns restore health and gold
+Presence of Mind,Primary Slot 1,Precision,Takedowns restore mana/energy
+Legend: Alacrity,Primary Slot 2,Precision,Attack speed per Legend stack
+Legend: Haste,Primary Slot 2,Precision,Ability haste per Legend stack
+Legend: Bloodline,Primary Slot 2,Precision,Life steal per Legend stack
+Coup de Grace,Primary Slot 3,Precision,Deal more damage to low health enemies
+Cut Down,Primary Slot 3,Precision,Deal more damage to high health enemies
+Last Stand,Primary Slot 3,Precision,Deal more damage when low health
+Glacial Augment,Keystone,Inspiration,Immobilize enemies to slow nearby foes
+Unseal Spellbook,Keystone,Inspiration,Replace summoner spells
+First Strike,Keystone,Inspiration,Striking first grants gold and damage
+Hextech Flashtraption,Primary Slot 1,Inspiration,Cast time for Flash is reduced
+Magical Footwear,Primary Slot 1,Inspiration,Get free boots but can't buy boots
+Perfect Timing,Primary Slot 1,Inspiration,Get free Stopwatch
+Future's Market,Primary Slot 2,Inspiration,You can go into debt for items
+Minion Dematerializer,Primary Slot 2,Inspiration,Start with Minion Dematerializers
+Biscuit Delivery,Primary Slot 2,Inspiration,Get free Total Biscuits over time
+Cosmic Insight,Primary Slot 3,Inspiration,Gain ability haste and item haste
+Approach Velocity,Primary Slot 3,Inspiration,Movement speed toward impaired enemies
+Time Warp Tonic,Primary Slot 3,Inspiration,Potions grant movement speed
+Grasp of the Undying,Keystone,Resolve,Periodic enhanced attacks
+Aftershock,Keystone,Resolve,Immobilizing enemies triggers resistances
+Guardian,Keystone,Resolve,Protect nearby allies from burst
+Demolish,Primary Slot 1,Resolve,Charge up explosive attack on turrets
+Font of Life,Primary Slot 1,Resolve,Impairing enemies marks them
+Shield Bash,Primary Slot 1,Resolve,Shields enhance next basic attack
+Conditioning,Primary Slot 2,Resolve,Gain armor and magic resist over time
+Second Wind,Primary Slot 2,Resolve,Heal over time after taking damage
+Bone Plating,Primary Slot 2,Resolve,Take less damage from consecutive attacks
+Overgrowth,Primary Slot 3,Resolve,Gain permanent health from minion deaths
+Revitalize,Primary Slot 3,Resolve,Enhance shields and heals
+Unflinching,Primary Slot 3,Resolve,Gain tenacity based on missing health
+Adaptive Force,Shard,Adaptive,+9 Adaptive Force (AD or AP)
+Attack Speed,Shard,Offensive,+10% Attack Speed
+Ability Haste,Shard,Offensive,+8 Ability Haste
+Armor,Shard,Defensive,+6 Armor
+Magic Resist,Shard,Defensive,+8 Magic Resist
+Health,Shard,Defensive,+15-140 Health (based on level)

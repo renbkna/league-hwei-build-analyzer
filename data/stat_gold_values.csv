@@ -1,0 +1,16 @@
+Stat,Gold Value per Unit,Reference Item,Notes
+Ability Power,20,Amplifying Tome,Primary AP stat
+Attack Damage,35,Long Sword,Not typically used by Hwei
+Health,2.67,Ruby Crystal,Effective health scaling
+Mana,1,Sapphire Crystal,Mana pool for sustained casting
+Armor,20,Cloth Armor,Physical damage mitigation
+Magic Resistance,20,Null-Magic Mantle,Magic damage mitigation
+Ability Haste,50,Glowing Mote,Cooldown reduction equivalent
+Attack Speed,25,Dagger,Not typically used by Hwei
+Critical Strike Chance,40,Cloak of Agility,Not used by Hwei
+Magic Penetration %,46.15,Blighting Jewel,Percentage-based penetration
+Magic Penetration Flat,46.67,Sorcerer's Shoes,Flat penetration value
+Lethality,30,Serrated Dirk,Not used by Hwei
+Life Steal,53.55,Vampiric Scepter,Not typically used by Hwei
+Movement Speed Flat,12,Boots,Mobility enhancement
+Omnivamp,39.67,Historical Leeching Leer,Spell vamp equivalent
